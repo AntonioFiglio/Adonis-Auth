@@ -2,13 +2,68 @@
 
 Project developed as the objetive to learn and improve my programming skills.
 
-| Method |               BreakPoint                |             Authorization             |   Query String   |                                    Body                                     |                            Expected                             |
-| :----: | :-------------------------------------: | :-----------------------------------: | :--------------: | :-------------------------------------------------------------------------: | :-------------------------------------------------------------: |
-|  POST  |            /api/auth/sign-up            |             not required              |   not required   | email: string, username: string, nickname: string \| null, password: string | { "token": { "type": "bearer", "token": "_" }, "user_id": "_" } |
-|  POST  |            /api/auth/sign-in            |             not required              |   not required   |                       email: string,password: string                        | { "token": { "type": "bearer", "token": "_" }, "user_id": "_" } |
-|  POST  | /api/auth/forgot-password?email={email} |             not required              |  email: string,  |                                not required                                 |                  # NOT CONTENT - HTTP CODE 201                  |
-|  POST  | /api/auth/reset-password?token={token}  |             not required              |  token: string,  |                     email: string, newPassword: string                      |                  # NOT CONTENT - HTTP CODE 201                  |
-| DELETE |   /api/auth/delete?user_id:{user_id}    | Authorization:`Bearer: ${user_token}` | user_id: string, |                                not required                                 |                  # NOT CONTENT - HTTP CODE 201                  |
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;  width: 500px;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">Method</th>
+    <th class="tg-c3ow">BreakPoint</th>
+    <th class="tg-c3ow">Authorization</th>
+    <th class="tg-c3ow">Query String</th>
+    <th class="tg-c3ow">Body</th>
+    <th class="tg-c3ow">Expected</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">POST</td>
+    <td class="tg-c3ow">/api/auth/sign-up</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">email: string, username: string, nickname: string | null, password: string</td>
+    <td class="tg-c3ow">{<br><br>  "token": {<br>    "type": "bearer",<br>    "token": "*"<br>  },<br>  "user_id": "*"<br>}</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">POST</td>
+    <td class="tg-c3ow">/api/auth/sign-in</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">email: string,password: string</td>
+    <td class="tg-c3ow">{<br><br>  "token": {<br>    "type": "bearer",<br>    "token": "*"<br>  },<br>  "user_id": "*"<br>}</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">POST</td>
+    <td class="tg-c3ow">/api/auth/forgot-password?email={email}</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">email: string,</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow"># NOT CONTENT - HTTP CODE 201</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">POST</td>
+    <td class="tg-c3ow">/api/auth/reset-password?token={token}</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow">token: string,</td>
+    <td class="tg-c3ow">email: string, newPassword: string</td>
+    <td class="tg-c3ow"># NOT CONTENT - HTTP CODE 201</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">DELETE</td>
+    <td class="tg-c3ow">/api/auth/delete?user_id:{user_id}</td>
+    <td class="tg-c3ow">Authorization:<span>`Bearer: ${user_token}`</span></td>
+    <td class="tg-c3ow">user_id: string,</td>
+    <td class="tg-c3ow">not required</td>
+    <td class="tg-c3ow"># NOT CONTENT - HTTP CODE 201</td>
+  </tr>
+</tbody>
+</table>
 
 # Techs and Tools
 
