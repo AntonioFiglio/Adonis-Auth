@@ -23,7 +23,7 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.group(() => {
     Route.post('sign-up', 'UsersController.signUP')
     Route.post('sign-in', 'UsersController.signIN')
-    Route.post('forgot-password', 'UsersController.forgotPassword')
+    Route.post('forgot-password/:email?', 'UsersController.forgotPassword')
     Route.post('reset-password/:token?', 'UsersController.resetPassword')
     Route.delete('delete/:user_id?', 'UsersController.deleteAccount').middleware('auth')
 }).prefix('api/auth')
